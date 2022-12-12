@@ -1,36 +1,36 @@
 package com.example.examtprevision
 
+import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.widget.CheckBox
+import android.widget.LinearLayout
+import android.widget.RadioButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-    lateinit var yes: CheckBox
-    lateinit var no: CheckBox
-    lateinit var text: TextView
+    lateinit var red : RadioButton
+    lateinit var green : RadioButton
+    lateinit var blue : RadioButton
+    lateinit var root: LinearLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        yes = findViewById(R.id.yes)
-        no = findViewById(R.id.no)
-        text = findViewById(R.id.result)
+        red = findViewById(R.id.red)
+        green = findViewById(R.id.green)
+        blue = findViewById(R.id.blue)
+        root= findViewById(R.id.root)
+    }
 
-        yes.setOnClickListener {
-
-            if (yes.isChecked) {
-                text.text = "I have experience"
-                no.isChecked = false;
-            }
+    fun changeColor(view: View){
+        if (red.isChecked){
+            root.setBackgroundColor(Color.RED)
+        }else if (green.isChecked){
+            root.setBackgroundColor(Color.GREEN)
+        } else if (blue.isChecked) {
+            root.setBackgroundColor(Color.BLUE)
         }
-
-        no.setOnClickListener {
-            if (no.isChecked) {
-                text.text = "I have no experience"
-                yes.isChecked = false
-            }
-
-        }
-
     }
 }
