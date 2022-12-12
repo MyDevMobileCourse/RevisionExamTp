@@ -8,33 +8,15 @@
     android:id="@+id/root"
     tools:context=".MainActivity">
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <RadioButton
+        <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Red"
-            android:id="@+id/red"
+            android:id="@+id/spinner"
             />
-        <RadioButton
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Green"
-            android:id="@+id/green"
+            android:id="@+id/text"
             />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Blue"
-            android:id="@+id/blue"
-            />
-    </RadioGroup>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Change color"
-        android:onClick="changeColor"
-        />
 </LinearLayout>

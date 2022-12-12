@@ -1,36 +1,31 @@
 package com.example.examtprevision
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import android.widget.CheckBox
-import android.widget.LinearLayout
-import android.widget.RadioButton
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-    lateinit var red : RadioButton
-    lateinit var green : RadioButton
-    lateinit var blue : RadioButton
-    lateinit var root: LinearLayout
-
+    lateinit var spinner : Spinner
+    lateinit var text : TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        red = findViewById(R.id.red)
-        green = findViewById(R.id.green)
-        blue = findViewById(R.id.blue)
-        root= findViewById(R.id.root)
-    }
+        spinner = findViewById(R.id.spinner)
+        text = findViewById(R.id.text)
 
-    fun changeColor(view: View){
-        if (red.isChecked){
-            root.setBackgroundColor(Color.RED)
-        }else if (green.isChecked){
-            root.setBackgroundColor(Color.GREEN)
-        } else if (blue.isChecked) {
-            root.setBackgroundColor(Color.BLUE)
+        var arrayAdapter = ArrayAdapter.createFromResource(this,R.array.govs,
+            com.google.android.material.R.layout.support_simple_spinner_dropdown_item)
+        spinner.adapter = arrayAdapter
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                text.text = parent?.getItemAtPosition(position).toString()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                text.text = "Nothing selected"
+            }
+
         }
     }
 }

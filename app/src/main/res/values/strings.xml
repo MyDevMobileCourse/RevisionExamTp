@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">examTpRevision</string>
+    <array name="govs">
+        <item>Bizerte</item>
+        <item>Tunis</item>
+        <item>Jendouba</item>
+        <item>Medenine</item>
+    </array>
 </resources>
