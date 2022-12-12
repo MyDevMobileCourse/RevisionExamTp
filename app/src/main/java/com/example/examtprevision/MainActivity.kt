@@ -1,6 +1,9 @@
 package com.example.examtprevision
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -12,12 +15,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun showSnackbar(view:View){
-        Snackbar.make(view,"This is  snackbar",Snackbar.LENGTH_LONG).setAction(
-            "close"
-        ) {
-            print("closed")
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater : MenuInflater = menuInflater
+        inflater.inflate(R.menu.action_bar,menu)
+        return true;
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId){
+            R.id.red -> {
+                Toast.makeText(this, "Red", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.green -> {
+                Toast.makeText(this, "Green", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.blue -> {
+                Toast.makeText(this, "Blue", Toast.LENGTH_SHORT).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
-            .show()
     }
 }

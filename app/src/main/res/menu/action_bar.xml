@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="Red"
+        android:icon="@drawable/red_background"
+        android:id="@+id/red"
+        app:showAsAction="always"
+        />
+    <item
+        android:title="Green"
+        android:icon="@drawable/green_background"
+        android:id="@+id/green"
+        app:showAsAction="always"
+        />
+    <item
+        android:title="Blue"
+        android:icon="@drawable/blue_background"
+        android:id="@+id/blue"
+        app:showAsAction="always"
+        />
+
+</menu>
