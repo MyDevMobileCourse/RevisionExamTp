@@ -4,36 +4,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".MainActivity">
 
-
-    <Button
-        android:id="@+id/mybutton"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hit me !" />
+        android:text="Do you have any experience with android"
+        />
 
-    <EditText
-        android:id="@+id/myEditText"
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Text here" />
+        android:id="@+id/yes"
+        android:text="Yes"
+        />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no"
+        android:text="No"
+        />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/mytext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello DSI31" />
-
-        <ImageView
-            android:id="@+id/myImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/result"
+        />
 
 </LinearLayout>
