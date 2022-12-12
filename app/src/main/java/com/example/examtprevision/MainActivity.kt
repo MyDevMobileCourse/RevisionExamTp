@@ -9,28 +9,35 @@ import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     lateinit var root : LinearLayout
+    lateinit var button : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         root = findViewById(R.id.root)
-        registerForContextMenu(root)
-    }
-    override fun onCreateContextMenu(
-        menu: ContextMenu?,
-        v: View?,
-        menuInfo: ContextMenu.ContextMenuInfo?
-    ) {
-        menuInflater.inflate(R.menu.action_bar,menu)
-        menu?.setHeaderTitle("Colors")
-        super.onCreateContextMenu(menu, v, menuInfo)
-    }
-    override fun onContextItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.blue -> root.setBackgroundColor(Color.BLUE)
-            R.id.red -> root.setBackgroundColor(Color.RED)
-            R.id.green -> root.setBackgroundColor(Color.GREEN)
+        button = findViewById(R.id.btn)
+
+        button.setOnClickListener {
+            val popumenu = PopupMenu(this,button)
+            menuInflater.inflate(R.menu.action_bar,popumenu.menu)
+            popumenu.setOnMenuItemClickListener {
+                when(it.itemId){
+                    R.id.red -> {
+                        root.setBackgroundColor(Color.RED)
+                        true
+                    }
+                    R.id.blue -> {
+                        root.setBackgroundColor(Color.BLUE)
+                        true
+                    }
+                    R.id.green -> {
+                        root.setBackgroundColor(Color.GREEN)
+                        true
+                    }
+                    else -> {false}
+                }
+            }
+                popumenu.show()
         }
-        return super.onContextItemSelected(item)
     }
 
 
