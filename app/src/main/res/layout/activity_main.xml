@@ -8,15 +8,13 @@
     android:id="@+id/root"
     tools:context=".MainActivity">
 
-        <Spinner
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/spinner"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/text"
-            />
+            android:text="Show toast message"
+            android:onClick="showToast"
+        />
+
 
 </LinearLayout>
