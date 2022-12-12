@@ -1,5 +1,6 @@
 package com.example.examtprevision
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.*
@@ -14,6 +15,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         root = findViewById(R.id.root)
+    }
+
+    fun goto2(view:View){
+        val intent = Intent(applicationContext,Activity2::class.java)
+        startActivity(intent)
     }
 
     override fun onBackPressed() {
