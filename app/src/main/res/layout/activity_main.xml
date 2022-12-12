@@ -4,19 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/mytext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello DSI31"
-    />
+        android:text="Hello DSI31" />
+
     <Button
         android:id="@+id/mybutton"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="Hit me !"
+        android:layout_height="wrap_content"
+        android:text="Hit me !" />
+
+    <EditText
+        android:id="@+id/myEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Text here"
         />
 
 </LinearLayout>
